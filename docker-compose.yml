@@ -1,0 +1,32 @@
+version: "3.3"
+services:
+    wordpress:
+        image: infinitewp
+        hostname: infinitewp
+        container_name: infinitewp
+        depends_on:
+            - mysql
+        restart: always
+        ports:
+            - 80:80
+        cap_drop:
+            - NET_ADMIN
+            - SYS_ADMIN
+        links:
+            - mysql
+    mysql:
+        image: mariadb
+        hostname: database
+        container_name: database
+        environment:
+          MYSQL_ROOT_PASSWORD: password
+          MYSQL_DATABASE: mydb
+          MYSQL_USER: mydb
+          MYSQL_PASSWORD: password
+        volumes:
+          - db-data:/var/lib/mysql
+        restart: always
+            
+volumes:
+  db-data:
+  
