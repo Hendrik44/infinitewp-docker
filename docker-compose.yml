@@ -1,7 +1,7 @@
 version: "3.3"
 services:
     wordpress:
-        image: infinitewp
+        image: hendrik44/infinitewp-docker
         hostname: infinitewp
         container_name: infinitewp
         depends_on:
