@@ -77,7 +77,7 @@ services:
           - mysql
 
     traefik:
-      image: traefik
+      image: traefik:v1.7.26-alpine
       hostname: traefik
       container_name: traefik
       command: --api --docker
