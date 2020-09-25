@@ -53,7 +53,7 @@ services:
           - internal
 
     adminer:
-        image: adminer:4.6.3-standalone
+        image: adminer:4.7.7-standalone
         read_only: true
         volumes:
           - /tmp
